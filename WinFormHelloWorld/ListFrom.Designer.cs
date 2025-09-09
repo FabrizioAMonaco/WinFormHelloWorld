@@ -47,7 +47,7 @@
             // lbxList
             // 
             this.lbxList.FormattingEnabled = true;
-            this.lbxList.Location = new System.Drawing.Point(36, 196);
+            this.lbxList.Location = new System.Drawing.Point(36, 206);
             this.lbxList.Name = "lbxList";
             this.lbxList.Size = new System.Drawing.Size(162, 173);
             this.lbxList.TabIndex = 0;
@@ -65,7 +65,7 @@
             // lblList
             // 
             this.lblList.AutoSize = true;
-            this.lblList.Location = new System.Drawing.Point(39, 181);
+            this.lblList.Location = new System.Drawing.Point(39, 191);
             this.lblList.Name = "lblList";
             this.lblList.Size = new System.Drawing.Size(109, 13);
             this.lblList.TabIndex = 2;
@@ -74,17 +74,19 @@
             // lblNum
             // 
             this.lblNum.AutoSize = true;
-            this.lblNum.Location = new System.Drawing.Point(39, 34);
+            this.lblNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNum.Location = new System.Drawing.Point(39, 27);
             this.lblNum.Name = "lblNum";
-            this.lblNum.Size = new System.Drawing.Size(113, 13);
+            this.lblNum.Size = new System.Drawing.Size(170, 20);
             this.lblNum.TabIndex = 3;
             this.lblNum.Text = "Entre com um número:";
             // 
             // tbxNum
             // 
+            this.tbxNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxNum.Location = new System.Drawing.Point(42, 50);
             this.tbxNum.Name = "tbxNum";
-            this.tbxNum.Size = new System.Drawing.Size(100, 20);
+            this.tbxNum.Size = new System.Drawing.Size(100, 26);
             this.tbxNum.TabIndex = 4;
             // 
             // button1
@@ -99,7 +101,7 @@
             // 
             // tbxRazao
             // 
-            this.tbxRazao.Location = new System.Drawing.Point(42, 94);
+            this.tbxRazao.Location = new System.Drawing.Point(42, 104);
             this.tbxRazao.Name = "tbxRazao";
             this.tbxRazao.Size = new System.Drawing.Size(100, 20);
             this.tbxRazao.TabIndex = 7;
@@ -107,7 +109,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 78);
+            this.label1.Location = new System.Drawing.Point(39, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 13);
             this.label1.TabIndex = 6;
@@ -135,7 +137,7 @@
             // 
             // tbxQtdTermos
             // 
-            this.tbxQtdTermos.Location = new System.Drawing.Point(42, 143);
+            this.tbxQtdTermos.Location = new System.Drawing.Point(42, 153);
             this.tbxQtdTermos.Name = "tbxQtdTermos";
             this.tbxQtdTermos.Size = new System.Drawing.Size(100, 20);
             this.tbxQtdTermos.TabIndex = 11;
@@ -143,7 +145,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 127);
+            this.label2.Location = new System.Drawing.Point(39, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(170, 13);
             this.label2.TabIndex = 10;
