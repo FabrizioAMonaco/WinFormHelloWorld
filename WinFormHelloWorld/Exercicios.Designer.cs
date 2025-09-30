@@ -28,16 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblIdade = new System.Windows.Forms.Label();
-            this.tbxIdade = new System.Windows.Forms.TextBox();
-            this.btnEntrada = new System.Windows.Forms.Button();
-            this.lblResultado = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblMaiorNum = new System.Windows.Forms.Label();
-            this.btnMaior = new System.Windows.Forms.Button();
-            this.tbxNums = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblHistorico = new System.Windows.Forms.Label();
             this.btnVirgula = new System.Windows.Forms.Button();
@@ -58,106 +48,8 @@
             this.btnMais = new System.Windows.Forms.Button();
             this.btnIgual = new System.Windows.Forms.Button();
             this.tbxCalcDisplay = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblIdade
-            // 
-            this.lblIdade.AutoSize = true;
-            this.lblIdade.Location = new System.Drawing.Point(17, 23);
-            this.lblIdade.Name = "lblIdade";
-            this.lblIdade.Size = new System.Drawing.Size(93, 13);
-            this.lblIdade.TabIndex = 0;
-            this.lblIdade.Text = "Qual a sua idade?";
-            // 
-            // tbxIdade
-            // 
-            this.tbxIdade.Location = new System.Drawing.Point(20, 39);
-            this.tbxIdade.Name = "tbxIdade";
-            this.tbxIdade.Size = new System.Drawing.Size(100, 20);
-            this.tbxIdade.TabIndex = 1;
-            // 
-            // btnEntrada
-            // 
-            this.btnEntrada.Location = new System.Drawing.Point(18, 78);
-            this.btnEntrada.Name = "btnEntrada";
-            this.btnEntrada.Size = new System.Drawing.Size(101, 27);
-            this.btnEntrada.TabIndex = 2;
-            this.btnEntrada.Text = "Ok";
-            this.btnEntrada.UseVisualStyleBackColor = true;
-            this.btnEntrada.Click += new System.EventHandler(this.btnEntrada_Click);
-            // 
-            // lblResultado
-            // 
-            this.lblResultado.AutoSize = true;
-            this.lblResultado.Location = new System.Drawing.Point(156, 23);
-            this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(35, 13);
-            this.lblResultado.TabIndex = 3;
-            this.lblResultado.Text = "label1";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.lblResultado);
-            this.groupBox1.Controls.Add(this.btnEntrada);
-            this.groupBox1.Controls.Add(this.tbxIdade);
-            this.groupBox1.Controls.Add(this.lblIdade);
-            this.groupBox1.Location = new System.Drawing.Point(13, 14);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(352, 131);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Classificação de Idade";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.lblMaiorNum);
-            this.groupBox2.Controls.Add(this.btnMaior);
-            this.groupBox2.Controls.Add(this.tbxNums);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(13, 163);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(352, 131);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Maior de 3 Números";
-            // 
-            // lblMaiorNum
-            // 
-            this.lblMaiorNum.AutoSize = true;
-            this.lblMaiorNum.Location = new System.Drawing.Point(140, 85);
-            this.lblMaiorNum.Name = "lblMaiorNum";
-            this.lblMaiorNum.Size = new System.Drawing.Size(35, 13);
-            this.lblMaiorNum.TabIndex = 3;
-            this.lblMaiorNum.Text = "label1";
-            // 
-            // btnMaior
-            // 
-            this.btnMaior.Location = new System.Drawing.Point(18, 78);
-            this.btnMaior.Name = "btnMaior";
-            this.btnMaior.Size = new System.Drawing.Size(101, 27);
-            this.btnMaior.TabIndex = 2;
-            this.btnMaior.Text = "Verifica o Maior";
-            this.btnMaior.UseVisualStyleBackColor = true;
-            this.btnMaior.Click += new System.EventHandler(this.btnMaior_Click);
-            // 
-            // tbxNums
-            // 
-            this.tbxNums.Location = new System.Drawing.Point(20, 39);
-            this.tbxNums.Name = "tbxNums";
-            this.tbxNums.Size = new System.Drawing.Size(223, 20);
-            this.tbxNums.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(226, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Entre com 3 números separados por vírgula \',\':";
             // 
             // groupBox3
             // 
@@ -180,13 +72,13 @@
             this.groupBox3.Controls.Add(this.btnMais);
             this.groupBox3.Controls.Add(this.btnIgual);
             this.groupBox3.Controls.Add(this.tbxCalcDisplay);
-            this.groupBox3.Location = new System.Drawing.Point(392, 14);
+            this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(311, 280);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Calculadora Simples";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+
             // 
             // lblHistorico
             // 
@@ -400,16 +292,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(343, 317);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Name = "Exercicios";
             this.Text = "Exercicios";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -417,17 +303,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblIdade;
-        private System.Windows.Forms.TextBox tbxIdade;
-        private System.Windows.Forms.Button btnEntrada;
-        private System.Windows.Forms.Label lblResultado;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label lblMaiorNum;
-        private System.Windows.Forms.Button btnMaior;
-        private System.Windows.Forms.TextBox tbxNums;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnIgual;
         private System.Windows.Forms.TextBox tbxCalcDisplay;

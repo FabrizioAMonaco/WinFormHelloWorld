@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// Adicionando a biblioteca
+using ClassLibraryCalculadora;
 
 namespace WinFormHelloWorld
 {
@@ -19,100 +21,27 @@ namespace WinFormHelloWorld
         public string Num2;
         public double ResultCalc;
 
+        //Criação do Objeto Calculadora
+        private ClassCalculator _calculadora = new ClassCalculator(0, 0);
+
         public Exercicios()
         {
             InitializeComponent();
         }
 
-        private void btnEntrada_Click(object sender, EventArgs e)
-        {
-            //Declaração de Variáveis
-            double Idade = Convert.ToDouble(tbxIdade.Text);
-            string Resultado;
-
-            //Processamento
-            if (Idade >= 65)
-            {
-                Resultado = "Você é Idoso";
-            } else if (Idade >= 18)
-            {
-                Resultado = "Você é Adulto";
-            }
-            else if (Idade >= 13)
-            {
-                Resultado = "Você é adolescente";
-            } else if (Idade >= 0)
-            {
-                Resultado = "Você é criança";
-            } else
-            {
-                Resultado = "A idade precisa ser maior que 0!";
-            }
-        
-            //Resultado
-            lblResultado.Text = Resultado;
-            tbxIdade.Text = "";
-        }
-
-        private void btnMaior_Click(object sender, EventArgs e)
-        {
-            //Declaração de Variáveis e Leitura de dados
-            string Entrada = tbxNums.Text;
-            string MaiorNum;
-
-            double Num1;
-            double Num2;
-            double Num3;
-
-            // Processamento
-            
-            // Separa os números da entrada por ',' ';' e ' '
-            string[] Nums = Entrada.Split(',', ' ', ';');
-            
-            // Converte texto para número
-            Num1 = Convert.ToDouble(Nums[0]);
-            Num2 = Convert.ToDouble(Nums[1]);
-            Num3 = Convert.ToDouble(Nums[2]);
-            
-            // Encontra o maior número
-            if (Num1 > Num2 && Num1 > Num3)
-            {
-                MaiorNum = "O maior número é: " + Convert.ToString(Num1);
-
-            } else if (Num2 > Num1 && Num2 > Num3)
-            {
-                MaiorNum = "O maior número é: " + Convert.ToString(Num2);
-
-            } else if (Num3 > Num1 && Num3 > Num2)
-            {
-                MaiorNum = "O maior número é: " + Convert.ToString(Num3);
-            }
-            else
-            {
-                MaiorNum = "Todos os números são iguais!";
-            }
-
-            // Resultado
-            lblMaiorNum.Text = MaiorNum;
-
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            tbxCalcDisplay.Text += "9";
-        }
-
         private void btnMais_Click(object sender, EventArgs e)
         {
-            Operador = "+";
-            Num1 = tbxCalcDisplay.Text;
-            lblHistorico.Text = Num1 + " " + Operador + " ";
-            tbxCalcDisplay.Text = "";
+            //Verifica se não tem mensagem de erro no display
+            if (tbxCalcDisplay.Text != "!err!" && tbxCalcDisplay.Text != "")
+            {
+                Operador = "+";
+                Num1 = tbxCalcDisplay.Text;
+                lblHistorico.Text = Num1 + " " + Operador + " ";
+                tbxCalcDisplay.Text = "";
+            } else
+            {
+                btnLimpa_Click(sender, e);
+            }
         }
 
         private void btnMenos_Click(object sender, EventArgs e)
@@ -142,29 +71,59 @@ namespace WinFormHelloWorld
         private void btnIgual_Click(object sender, EventArgs e)
         {
             
+            // Precisa tratar quando o display estiver mostrando erro ou estiver vazio ""!!!
+            if (tbxCalcDisplay.Text != "") 
             Num2 = tbxCalcDisplay.Text;
             lblHistorico.Text = lblHistorico.Text + Num2 + " = ";
 
-            // Processamento
-            if (Operador == "+")
+            // Código Refatorado
+            if (Num1 == "")
             {
-                ResultCalc = Convert.ToDouble(Num1) + Convert.ToDouble(Num2);
-            
-            } else if (Operador == "-")
+                //Se não tiver Num1, carrega Num2 no display
+                tbxCalcDisplay.Text = Num2;
+            } else if ((Operador != "/") && (Convert.ToDouble(Num2) != 0))
             {
-                ResultCalc = Convert.ToDouble(Num1) - Convert.ToDouble(Num2);
-            
-            } else if (Operador == "*")
+                ResultCalc = _calculadora.Calcular(Convert.ToDouble(Num1), Convert.ToDouble(Num2), Operador);
+                tbxCalcDisplay.Text = Convert.ToString(Math.Round(ResultCalc, 2));
+            } else
             {
-                ResultCalc = Convert.ToDouble(Num1) * Convert.ToDouble(Num2);
-            
-            } else if (Operador == "/")
-            {
-                ResultCalc = Convert.ToDouble(Num1) / Convert.ToDouble(Num2);
+                //Erro de Divisão por 0
+                tbxCalcDisplay.Text = "!err!";
             }
 
-            // Resultado
-            tbxCalcDisplay.Text = Convert.ToString(ResultCalc);
+            // Processamento Antigo
+            //if (Operador == "+")
+            //{
+            //    //ResultCalc = Convert.ToDouble(Num1) + Convert.ToDouble(Num2);
+            //    ResultCalc = _calculadora.Somar(Convert.ToDouble(Num1), Convert.ToDouble(Num2));
+            //    // Resultado
+            //    tbxCalcDisplay.Text = Convert.ToString(Math.Round(ResultCalc,2));
+
+            //} else if (Operador == "-")
+            //{
+            //    //ResultCalc = Convert.ToDouble(Num1) - Convert.ToDouble(Num2);
+            //    ResultCalc = _calculadora.Subtrair(Convert.ToDouble(Num1), Convert.ToDouble(Num2));
+            //    // Resultado
+            //    tbxCalcDisplay.Text = Convert.ToString(Math.Round(ResultCalc, 2));
+
+            //} else if (Operador == "*")
+            //{
+            //    //ResultCalc = Convert.ToDouble(Num1) * Convert.ToDouble(Num2);
+            //    ResultCalc = _calculadora.Multiplicar(Convert.ToDouble(Num1), Convert.ToDouble(Num2));
+            //    // Resultado
+            //    tbxCalcDisplay.Text = Convert.ToString(Math.Round(ResultCalc, 2));
+
+            //} else if ((Operador == "/") && (Convert.ToDouble(Num2) != 0))
+            //{
+            //    //ResultCalc = Convert.ToDouble(Num1) / Convert.ToDouble(Num2);
+            //    ResultCalc = _calculadora.Dividir(Convert.ToDouble(Num1), Convert.ToDouble(Num2));
+            //    // Resultado
+            //    tbxCalcDisplay.Text = Convert.ToString(Math.Round(ResultCalc, 2));
+            //} else
+            //{
+            //    // Resultado para divisão por 0
+            //    tbxCalcDisplay.Text = "!err!";
+            //}
         }
 
         private void btn1_Click(object sender, EventArgs e)
@@ -207,9 +166,20 @@ namespace WinFormHelloWorld
             tbxCalcDisplay.Text += "8";
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            tbxCalcDisplay.Text += "9";
+        }
+
         private void btn0_Click(object sender, EventArgs e)
         {
-            tbxCalcDisplay.Text += "0";
+            if (tbxCalcDisplay.Text == "")
+            {
+                tbxCalcDisplay.Text += "0";
+            } else if (Convert.ToDouble(tbxCalcDisplay.Text) > 0)
+            {
+                tbxCalcDisplay.Text += "0";
+            }
         }
 
         private void btnLimpa_Click(object sender, EventArgs e)
